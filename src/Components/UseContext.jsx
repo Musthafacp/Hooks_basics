@@ -1,13 +1,23 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ToggleTheme } from "../Components/UseState";
 import "../App.css";
 
 function UseContext() {
   const [currLike, setCurrLike] = useState(0);
-  const [currContent, setContent] = useState(true);
+  const [currContent, setContent] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
+  useEffect(() => {
+    if (showAlert) {
+      window.alert("Content button is clicked");
+      setContent((prevLike) => !prevLike);
+      setShowAlert(false);
+    }
+  }, [showAlert]);
 
   const handleContent = () => {
-    setContent((prevState) => !prevState);
+
+    setShowAlert(true);
   };
 
   const handleLike = () => {
@@ -29,9 +39,9 @@ function UseContext() {
       <button onClick={handleContent}>Content</button>
       <h1>{currLike}</h1>
       <button onClick={handleLike}>Like</button>
-      <button>Dislike</button>
     </div>
   );
 }
 
 export default UseContext;
+
