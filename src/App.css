@@ -1,0 +1,23 @@
+.buttonDiv{
+  text-align: center;
+  margin-top: 6%;
+}
+
+.buttonDiv button{
+  padding: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.Bigdiv{
+  text-align: center;
+  height: max-content;
+}
+
+.Bigdiv button{
+  cursor: pointer;
+  padding: 20px;
+  font-weight: bold;
+  margin: 20px;
+  cursor: pointer;
+}
